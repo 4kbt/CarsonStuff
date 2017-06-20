@@ -19,4 +19,4 @@ PFit = psd(d(:,1), sineFit - mean(sineFit));
 
 loglog(PCS(:,1), sqrt(PCS(:,2)),PFit(:,1), sqrt(PFit(:,2)));
 
-
+[pb ps pr pbf] = peakFitter3(d(:,1), CS, 2.27e-5,2.33e-5)
