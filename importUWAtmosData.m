@@ -1,3 +1,4 @@
+clear;
 d = load('UWAtmosPressure.dat');
 
 %Swap from Julian date to seconds
@@ -16,3 +17,4 @@ t = d(1,1):60:d(end,1); t = t';
 dInterp = interp1(d(:,1), d(:,2), t, 'nearest');
 
 
+d = [t dInterp];

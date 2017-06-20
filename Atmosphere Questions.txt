@@ -1,0 +1,82 @@
+The accompanying dataset and script will help you have a look at the last year's worth of atmospheric pressure data from the UW Atmospheric Sciences building.
+
+I Before you begin (think on these for a half-hour or so before you dig in):
+
+1. What do you think the dataset will look like?
+
+	It should have a sine wave with a frequency of about a day dominating, then small fluctuations 
+	from that corresponding to other changes in frequency.
+
+2. What features do you expect to see?
+
+	A sine wave that changes position and amplitude with frequency of ~10^-5
+
+3. What features do you expect to see in the power spectrum?
+
+	A peak at 10^-5, and peaks at the harmonics of this frequency.
+
+
+II Time Domain
+
+1. Plot it.
+
+2. Nicely label the axes.
+
+3. Does the dataset make sense? Does it align with your experience?
+
+4. Does the sensor look like it was working correctly?
+
+	The data is a lot lower resolution than the torsion pendulum, but there are no abrubt stops or 
+	flat parts of the data so I think it is working correctly.
+	I think the measurements are taken on the order of magnitude of 10^3 seconds.
+
+5. What is the dominant timescale of fluctuations?
+	
+	Measuring the largest amplitude peak to peak, the time difference is ~10^6 seconds, or around 2 weeks.
+
+
+III Frequency Domain
+
+
+Subtract the mean pressure (to remove the DC power) and have a look at the power spectrum.
+
+1. Nicely label the axes of the plot
+
+2. Does the plot make any physical sense? Is the noise level reasonable?
+
+	The low frequency noise looks to be very high power and obstructive, it is not flat from the main peaks
+	which I thought would be at 10^-5 Hz (daily oscillations) and 8.27x10^-7 Hz (bi-weekly oscillations 
+	observed in the time domain).
+
+3. What are the notable features of the power spectrum?
+
+	There is a small peak at 1.1522x10^-5 Hz, which I assume corresponds to daily fluctuations in temperature;
+	There is a large peak at 2.3026x10^-5 Hz, which is close to the second harmonic of the first osciallation,
+	this corresponds to a twice daily fluctuation, and has about the same peak height as the first;
+	The second and third harmonics look like they appear with peaks at 3.4552x10^-5 and 4.6015x10^-5 respectively,
+	but the numbers are slightly off of the harmonics.
+
+4. If there are lines, at which frequency do they appear?
+
+5. If there are harmonics of a fundamental, are any of them abnormally large?
+
+	The second harmonic is just as large as the first
+
+6. Why? What might that mean?
+
+	The second harmonic is also being driven, not only the first
+
+7. Are any of the peaks split? By how much? Why?
+
+8. Are there any lines you'd expect to see but don't?
+
+	The peak at 8.27x10^-7 (for two weeks) is present (on the graph it is ~8.2373x10^-7 Hz), there is instead a peak at 
+
+
+IV Digging deeper
+
+1. What time of day (referenced to 0-seconds) generally has a higher pressure than the rest of the day?
+
+	I need a fit for the daily sine wave, with the angle offset
+
+2. Are there any other times of day that generally have higher pressure than other times?
